@@ -7,7 +7,6 @@ args    = ["-l"]
 [window]
 padding      = { x = 10, y = 4 }
 startup_mode = "Maximized"
-opacity      = 0.9
 
 [font]
 normal      = { family = "JetBrainsMonoNL NF", style = "SemiBold" }
@@ -81,12 +80,6 @@ color = "#f5a97f"
 [[colors.indexed_colors]]
 index = 17
 color = "#f4dbd6"
-
-[keyboard]
-bindings = [
-    { key = "PageUp", mods = "Control", action = "ScrollHalfPageUp" },
-    { key = "PageDown", mods = "Control", action = "ScrollHalfPageDown" },
-]
 
 [general]
 live_config_reload = true
