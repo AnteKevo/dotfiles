@@ -6,7 +6,7 @@ args    = ["-l"]
 [env]
 
 [window]
-padding      = { x = 10, y = 10 }
+padding      = { x = 10, y = 4 }
 startup_mode = "Maximized"
 opacity      = 0.9
 
@@ -14,7 +14,7 @@ opacity      = 0.9
 normal      = { family = "JetBrainsMonoNL NF", style = "SemiBold" }
 bold        = { family = "JetBrainsMonoNL NF", style = "Bold" }
 italic      = { family = "JetBrainsMonoNL NF", style = "SemiBold Italic" }
-bold_italic = { family = "JetBrainsMonoNL NF", style = "SemiBold Italic" }
+bold_italic = { family = "JetBrainsMonoNL NF", style = "Bold Italic" }
 size        = 14
 
 [colors.primary]
