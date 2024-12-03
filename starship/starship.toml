@@ -94,6 +94,7 @@ truncation_symbol = "…/"
 "Music" = "󰝚 "
 "Pictures" = " "
 "dev" = "󰲋 "
+"tools" = " "
 
 [git_branch]
 symbol = ""
