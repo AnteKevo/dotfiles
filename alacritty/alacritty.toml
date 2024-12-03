@@ -13,7 +13,7 @@ normal      = { family = "JetBrainsMonoNL NF", style = "SemiBold" }
 bold        = { family = "JetBrainsMonoNL NF", style = "Bold" }
 italic      = { family = "JetBrainsMonoNL NF", style = "SemiBold Italic" }
 bold_italic = { family = "JetBrainsMonoNL NF", style = "Bold Italic" }
-size        = 13
+size        = 12
 
 [colors.primary]
 background = "#24273a"
