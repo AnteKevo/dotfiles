@@ -2,7 +2,6 @@
 
 format = """
 [](color_surface0)\
-$os\
 $username\
 [](bg:color_peach fg:color_surface0)\
 $directory\
@@ -49,38 +48,11 @@ color_base      = "#24273a"
 color_mantle    = "#1e2030"
 color_crust     = "#181926"
 
-[os]
-disabled = false
-style = "bg:color_surface0 fg:color_text"
-
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-EndeavourOS = ""
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
-
 [username]
 show_always = true
 style_user = "bg:color_surface0 fg:color_text"
 style_root = "bg:color_surface0 fg:color_text"
-format = '[ $user ]($style)'
+format = '[󰊠 $user ]($style)'
 
 [directory]
 style = "fg:color_mantle bg:color_peach"
@@ -102,6 +74,12 @@ format = '[[ $symbol $branch ](fg:color_mantle bg:color_green)]($style)'
 
 [git_status]
 style = "bg:color_green"
+untracked = '?${count}'
+stashed = '$${count}'
+modified = '!${count}'
+staged = '+${count}'
+renamed = '»${count}'
+deleted = '✘ ${count}'
 format = '[[($all_status$ahead_behind )](fg:color_mantle bg:color_green)]($style)'
 
 [c]
