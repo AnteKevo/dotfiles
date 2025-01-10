@@ -46,7 +46,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 500
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -70,6 +70,10 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- There are certain files that we would never want to edit with Vim.
+-- Wildmenu will ignore files with these extensions.
+vim.opt.wildignore = "*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
