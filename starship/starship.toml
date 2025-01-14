@@ -69,7 +69,7 @@ format = '[\($state( $progress_current/$progress_total)\)](#a3be8c)'
 style = "bg:color_green"
 conflicted = ' =${count}'
 untracked = ' ?${count}'
-stashed = ' $${count}'
+stashed = ' \$${count}'
 modified = ' !${count}'
 staged = ' +${count}'
 renamed = ' »${count}'
