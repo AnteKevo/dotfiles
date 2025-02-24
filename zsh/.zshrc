@@ -1,7 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=~/.local/bin/:$PATH
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
 export BAT_THEME=Nord
+
+export LESS="FR"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -16,6 +22,8 @@ alias vi=vim
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+source $HOME/.config/plasma-workspace/env/locale.sh
 eval "$(starship init zsh)"
-source ~/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(fzf --zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
