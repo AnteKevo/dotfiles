@@ -22,7 +22,6 @@ alias vi=vim
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-source $HOME/.config/plasma-workspace/env/locale.sh
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
