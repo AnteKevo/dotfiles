@@ -74,3 +74,7 @@ vim.opt.scrolloff = 10
 -- There are certain files that we would never want to edit with Vim.
 -- Wildmenu will ignore files with these extensions.
 vim.opt.wildignore = "*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"
+
+-- Disable netrw (Use neo-tree instead)
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
