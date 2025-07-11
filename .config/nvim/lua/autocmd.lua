@@ -17,6 +17,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	desc = "Remember last edit position of a file",
 	group = vim.api.nvim_create_augroup("remember-last-edit-position", { clear = true }),
 	callback = function()
+		local filename = vim.api.nvim_buf_get_name(0)
+		if filename:match("%.git/COMMIT_EDITMSG$") then
+			return
+		end
 		if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
 			vim.fn.setpos(".", vim.fn.getpos("'\""))
 		end
