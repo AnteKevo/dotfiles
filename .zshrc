@@ -7,7 +7,8 @@ SAVEHIST=10000
 
 export BAT_THEME=Nord
 
-export LESS="FR"
+export LESS="dMqifR"
+#export LESS="FR"
 
 alias ..="cd .."
 alias ...="cd ../.."
