@@ -27,5 +27,13 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Set different indentation for .c and .h files",
+	pattern = { "c", "h" },
+	callback = function()
+		vim.opt_local.tabstop = 2
+		vim.opt_local.softtabstop = 2
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.expandtab = true
+	end,
+})
