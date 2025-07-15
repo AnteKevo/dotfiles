@@ -34,6 +34,9 @@ alias vi=vim
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# Source work related stuff
+[ -f .workrc ] && source .workrc
+
 # Starship
 type starship &> /dev/null && eval "$(starship init zsh)"
 
