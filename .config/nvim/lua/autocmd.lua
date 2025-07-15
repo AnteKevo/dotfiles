@@ -1,7 +1,6 @@
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
--- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -12,7 +11,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- Remember last edit position of a file
 vim.api.nvim_create_autocmd("BufReadPost", {
 	desc = "Remember last edit position of a file",
 	group = vim.api.nvim_create_augroup("remember-last-edit-position", { clear = true }),
@@ -29,6 +27,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 vim.api.nvim_create_autocmd("FileType", {
 	desc = "Set different indentation for .c and .h files",
+	group = vim.api.nvim_create_augroup("c-h-indentation", { clear = true }),
 	pattern = { "c", "h" },
 	callback = function()
 		vim.opt_local.tabstop = 2
@@ -36,4 +35,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.shiftwidth = 2
 		vim.opt_local.expandtab = true
 	end,
+})
+
+vim.api.nvim_create_autocmd("VimResized", {
+	group = vim.api.nvim_create_augroup("auto-resize", { clear = true }),
+	desc = "Automatically resize windows during splits",
+	pattern = "*",
+	command = "wincmd =",
 })
