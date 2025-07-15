@@ -1,29 +1,54 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=~/.local/bin/:$PATH
+# Env vars
+export PATH=~/.local/bin:$PATH
+export LESS="dMqifR"
 
+# Local vars
+zsh_syntax_highlight=/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# History settings
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-export BAT_THEME=Nord
-
-export LESS="dMqifR"
-#export LESS="FR"
-
+# Aliases
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
-alias cat=bat
-alias vim=nvim
+alias ll="ls -lh"
+alias lla="ls -alh"
+alias rl="source ~/.zshrc"
 alias vi=vim
 
+# Keybinds
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-eval "$(starship init zsh)"
-eval "$(fzf --zsh)"
+# Starship
+type starship &> /dev/null && eval "$(starship init zsh)"
+
+# Neovim
+type nvim &> /dev/null && alias vim=nvim
+
+# Bat
+if type bat &> /dev/null; then
+    alias cat=bat
+    export BAT_THEME=Nord
+fi
+
+# FZF
+type fzf &> /dev/null && eval "$(fzf --zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Syntax highlighting
+[ -f $zsh_syntax_highlight ] && source $zsh_syntax_highlight
