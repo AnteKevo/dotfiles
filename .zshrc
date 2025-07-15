@@ -53,5 +53,13 @@ fi
 type fzf &> /dev/null && eval "$(fzf --zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Eza
+if type eza &> /dev/null; then
+    alias ls="eza"
+    alias ll="eza -lh"
+    alias lla="eza -alh"
+    alias tree="eza --tree -I .git -a"
+fi
+
 # Syntax highlighting
 [ -f $zsh_syntax_highlight ] && source $zsh_syntax_highlight
