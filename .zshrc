@@ -43,15 +43,26 @@ type starship &> /dev/null && eval "$(starship init zsh)"
 # Neovim
 type nvim &> /dev/null && alias vim=nvim
 
+# FZF
+if type fzf &> /dev/null; then
+    source <(fzf --zsh)
+    export FZF_CTRL_T_OPTS="
+    --walker file,hidden
+    --walker-skip .git,node_modules,target
+    --preview 'cat -n {}'
+    --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+fi
+
 # Bat
 if type bat &> /dev/null; then
     alias cat=bat
     export BAT_THEME=Nord
+    export FZF_CTRL_T_OPTS="
+    --walker file,hidden
+    --walker-skip .git,node_modules,target
+    --preview 'bat -n --color always {}'
+    --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 fi
-
-# FZF
-type fzf &> /dev/null && eval "$(fzf --zsh)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Eza
 if type eza &> /dev/null; then
