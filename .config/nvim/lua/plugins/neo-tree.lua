@@ -9,7 +9,7 @@ return {
 		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font }, -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
 	},
-	cmd = "Neotree",
+	lazy = false,
 	keys = {
 		{ "\\", ":Neotree reveal<CR>", desc = "NeoTree reveal", silent = true },
 	},
