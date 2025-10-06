@@ -73,8 +73,6 @@ require("lazy").setup({
 		{ "windwp/nvim-autopairs", import = "plugins.autopairs" },
 		-- File system navigator
 		{ "nvim-neo-tree/neo-tree.nvim", import = "plugins.neo-tree" },
-		-- GitHub Copilot chat
-		{ "CopilotC-Nvim/CopilotChat.nvim", import = "plugins.copilotchat" },
 		ui = {
 			icons = vim.g.have_nerd_font and {} or {
 				cmd = "⌘",
